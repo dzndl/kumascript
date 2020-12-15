@@ -31,7 +31,7 @@ describeMacro('Compat', function() {
         macro.ctx.require = jest.fn(pkg => fixtureCompatData);
 
         /*        macro.ctx.require = sinon.stub();
-        macro.ctx.require.withArgs('mdn-browser-compat-data').returns(fixtureCompatData);
+        macro.ctx.require.withArgs('@mdn/browser-compat-data').returns(fixtureCompatData);
 */
     });
 
@@ -168,7 +168,7 @@ describeMacro('Compat', function() {
                 );
                 assert.equal(
                     dom.querySelector('.bc-platform-desktop').colSpan,
-                    4
+                    5
                 );
                 assert.equal(
                     dom.querySelector('.bc-platform-mobile').colSpan,

@@ -40,11 +40,16 @@ def lint_kumascript(docker_tag='') {
 }
 
 def image(what, docker_tag='') {
-    def what_cap = what.capitalize()
-    def tag_type = (docker_tag == '') ? 'commit-tagged' : 'latest-tagged'
-    withEnv(["KS_VERSION=${docker_tag}"]) {
-        utils.sh_with_notify("make ${what}-kumascript",
-                             "${what_cap} the ${tag_type} Kumascript image")
+    if ((what == 'build') && (docker_tag == 'all tags')) {
+        utils.sh_with_notify("make build-kumascript-with-all-tags",
+                             "Build the Kumascript image with all tags")
+    } else {
+        def what_cap = what.capitalize()
+        def tag_type = (docker_tag == '') ? 'commit-tagged' : 'latest-tagged'
+        withEnv(["KS_VERSION=${docker_tag}"]) {
+            utils.sh_with_notify("make ${what}-kumascript",
+                                 "${what_cap} the ${tag_type} Kumascript image")
+        }
     }
 }
 
@@ -53,7 +58,7 @@ node {
         // Checkout Kuma project's master branch
         checkout(
             [$class: 'GitSCM',
-             userRemoteConfigs: [[url: 'https://github.com/mozilla/kuma']],
+             userRemoteConfigs: [[url: 'https://github.com/mdn/kuma']],
              branches: [[name: 'refs/heads/master']],
              extensions: [[$class: 'SubmoduleOption',
                            disableSubmodules: false,
@@ -76,8 +81,7 @@ node {
     switch (env.BRANCH_NAME) {
         case 'master':
             stage('Build') {
-                image('build')
-                image('build', 'latest')
+                image('build', 'all tags')
             }
             stage('Lint') {
                 lint_kumascript('latest')
@@ -85,7 +89,7 @@ node {
             stage('Test') {
                 test_kumascript('latest')
             }
-            stage('Push KumaScript Docker Image') {
+            stage('Push KumaScript Docker Images') {
                 image('push')
                 image('push', 'latest')
             }

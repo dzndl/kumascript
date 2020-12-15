@@ -30,7 +30,7 @@ Example calls
 
 */
 
-const bcd = require('mdn-browser-compat-data');
+const bcd = require('@mdn/browser-compat-data');
 var query = $0;
 var depth = $1 || 1;
 var output = '';
@@ -48,7 +48,7 @@ const browsers = {
   "desktop": ['chrome', 'edge', 'firefox', 'ie', 'opera', 'safari'],
   "mobile": ['webview_android', 'chrome_android', 'firefox_android', 'opera_android', 'safari_ios', 'samsunginternet_android'],
   "server": ['nodejs'],
-  "webextensions-desktop": ['chrome', 'edge', 'firefox', 'opera'],
+  "webextensions-desktop": ['chrome', 'edge', 'firefox', 'opera', 'safari'],
   "webextensions-mobile": ['firefox_android']
 };
 
@@ -698,7 +698,7 @@ if (!compatData) {
 traverseFeatures(compatData, depth, '');
 
 if (features.length > 0) {
-    output = '<div class="bc-data">';
+    output = `<div class="bc-data" id="bcd:${query}">`;
     output += '<a class="bc-github-link" href="https://github.com/mdn/browser-compat-data">Update compatibility data on GitHub</a>';
     output += `<table class="bc-table bc-table-${bcCategory}">`;
     output += writeCompatHead();

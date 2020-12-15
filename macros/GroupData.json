@@ -23,6 +23,15 @@
              "properties": [ "Navigator.battery" ],
              "events":     []
         },
+        "Barcode Detector API": {
+            "overview":   [ "Barcode Detector API" ],
+            "guides":     [],
+            "interfaces": [ "BarcodeDetector" ],
+            "methods":    [ "BarcodeDetector.detect()",
+                            "BarcodeDetector.getSupportedFormats()" ],
+            "properties": [],
+            "events":     []
+        },
         "Beacon": {
             "overview":   [ "Beacon API" ],
             "guides":     [ "/docs/Web/API/Beacon_API/Using_the_Beacon_API" ],
@@ -85,8 +94,10 @@
             "events":     []
         },
         "Clipboard API": {
+            "overview":   [ "Clipboard API" ],
             "interfaces": [ "Clipboard",
-                            "ClipboardEvent"],
+                            "ClipboardEvent",
+                            "ClipboardItem" ],
             "dictionaries": [ "ClipboardPermissionDescriptor" ],
             "methods":    [],
             "properties": [ "Navigator.clipboard" ],
@@ -95,7 +106,25 @@
                             "Element: cut",
                             "Element: paste" ]
         },
+        "Contact Picker API": {
+            "overview":   [ "Contact Picker API" ],
+            "interfaces": [ "ContactsManager" ],
+            "methods":    [ "ContactsManager.select()",
+                            "ContactsManager.getProperties()" ],
+            "properties": [ "Navigator.contacts" ],
+            "events":     []
+        },
+        "Content Index API": {
+            "overview":   [ "Content Index API" ],
+            "interfaces": [ "ContentIndex",
+                            "ContentIndexEvent" ],
+            "methods":    [],
+            "properties": ["ServiceWorkerRegistration.index",
+                           "ServiceWorkerGlobalScope.oncontentdelete"],
+            "events":     ["ServiceWorkerGlobalScope: contentdelete"]
+        },
         "Console API": {
+            "overview":   [ "Console API" ],
             "interfaces": [ "Console" ],
             "methods":    [],
             "properties": [ "Window.console",
@@ -125,6 +154,29 @@
                             "FontFaceSet",
                             "FontFaceSource",
                             "FontFaceSetLoadEvent" ],
+            "methods":    [],
+            "properties": [],
+            "events":     []
+        },
+        "CSS Painting API": {
+            "overview":   [ "CSS Painting API" ],
+            "interfaces": [ "PaintWorkletGlobalScope",
+                            "PaintRenderingContext2D",
+                            "PaintSize" ],
+            "methods":    [ "PaintWorklet.registerPaint()" ],
+            "properties": [],
+            "events":     []
+        },
+        "CSS Typed OM API": {
+            "overview":   [ "CSS Typed OM API" ],
+            "interfaces": [ "CSSKeywordValue",
+                            "CSSImageValue",
+                            "CSSNumericValue",
+                            "CSSStyleValue",
+                            "CSSPositionValue",
+                            "CSSTransformValue",
+                            "CSSUnparsedValue",
+                            "StylePropertyMap" ],
             "methods":    [],
             "properties": [],
             "events":     []
@@ -192,6 +244,7 @@
                             "/docs/Web/API/Document_Object_Model/Examples" ],
             "interfaces": [ "AbortController",
                             "AbortSignal",
+                            "AbstractRange",
                             "Attr",
                             "ByteString",
                             "CDATASection",
@@ -240,6 +293,7 @@
                             "ProcessingInstruction",
                             "PromiseResolver",
                             "Range",
+                            "StaticRange",
                             "Text",
                             "TextDecoder",
                             "TextEncoder",
@@ -354,6 +408,20 @@
             "properties": [],
             "events":     []
         },
+        "File System Access API": {
+            "overview":   [ "File System Access API" ],
+            "guides":     [],
+            "interfaces": [ "FileSystemHandle",
+                            "FileSystemFileHandle",
+                            "FileSystemDirectoryHandle",
+                            "FileSystemWritableFileStream" ],
+            "methods":    [ "window.showOpenFilePicker()",
+                            "window.showSaveFilePicker()",
+                            "window.showDirectoryPicker()",
+                            "DataTransferItem.getAsFileSystemHandle()" ],
+            "properties": [],
+            "events":     []
+        },
         "File System API": {
             "overview":   [ "File and Directory Entries API" ],
             "guides":     [ "/docs/Web/API/File_and_Directory_Entries_API/Introduction",
@@ -427,11 +495,13 @@
                             "Window: gamepaddisconnected" ]
         },
         "Geolocation API": {
-            "interfaces": [ "Coordinates",
-                            "Geolocation",
-                            "Position",
-                            "PositionError",
-                            "PositionOptions" ],
+            "overview":   [ "Geolocation API" ],
+            "guides":     [ "/docs/Web/API/Geolocation_API/Using_the_Geolocation_API" ],
+            "dictionaries": [ "PositionOptions" ],
+            "interfaces": [ "Geolocation",
+                            "GeolocationCoordinates",
+                            "GeolocationPosition",
+                            "GeolocationPositionError"],
             "methods":    [],
             "properties": [ "Navigator.geolocation" ],
             "events":     []
@@ -457,6 +527,17 @@
             "methods":    [],
             "properties": [],
             "events":     []
+        },
+        "History API": {
+          "overview": [
+            "History API"
+          ],
+          "interfaces": [
+            "History"
+          ],
+          "methods": [],
+          "properties": [],
+          "events": []
         },
         "HTML DOM": {
             "interfaces": [ "BeforeUnloadEvent",
@@ -642,6 +723,14 @@
                             "HTMLElement: drop",
                             "HTMLElement: dragend" ]
         },
+        "HTML Sanitizer API": {
+            "overview": [ "HTML Sanitizer API" ],
+            "interfaces": [ "Sanitizer" ],
+            "methods":    [ "Sanitizer.sanitize",
+                            "Sanitizer.sanitizeToString" ],
+            "properties": [],
+            "events":     []
+        },
         "Image Capture API": {
             "overview": [ "MediaStream Image Capture API" ],
             "interfaces": [ "ImageCapture",
@@ -748,8 +837,15 @@
             "interfaces": [ "MediaMetadata",
                             "MediaSession"],
             "methods":    [],
-            "properties": [],
-            "events":     []
+            "properties": [ "navigator.mediaSession" ],
+            "events":     [],
+            "dictionaries": [ "MediaImage",
+                              "MediaMetadataInit",
+                              "MediaPositionState",
+                              "MediaSessionActionDetails" ],
+            "types":      [ "MediaSessionAction",
+                            "MediaSessionPlaybackState" ],
+            "callbacks":  [ "MediaSessionActionHandler" ]
         },
         "Media Source Extensions": {
             "overview": [ "Media Source Extensions API" ],
@@ -866,6 +962,15 @@
             "properties": [ "Window.performance" ],
             "events":     []
         },
+        "Periodic Background Sync": {
+            "overview":   [ "Web Periodic Background Synchronization API" ],
+            "interfaces": [ "PeriodicSyncEvent",
+                            "PeriodicSyncManager" ],
+            "methods":    [],
+            "properties": [ "ServiceWorkerRegistration.periodicSync",
+                            "ServiceWorkerGlobalScope.onperiodicsync" ],
+            "events":     [ "ServiceWorkerGlobalScope: periodicsync" ]
+        },
         "Permissions API": {
             "overview":   [ "Permissions API" ],
             "guides":     [ "/docs/Web/API/Permissions_API/Using_the_Permissions_API" ],
@@ -875,6 +980,23 @@
             "properties": [ "Navigator.permissions",
                             "WorkerNavigator.permissions"],
             "events":     []
+	},
+        "Picture-in-Picture API": {
+            "overview":   [ "Picture-in-Picture API" ],
+            "guides":     [ "/docs/Web/API/Picture-in-Picture_API/Guide" ],
+            "interfaces": [ "PictureInPictureWindow" ],
+            "methods":    [ "HTMLVideoElement.requestPictureInPicture()",
+                            "Document.exitPictureInPicture()" ],
+            "properties": [ "HTMLVideoElement.autoPictureInPicture",
+			    "HTMLVideoElement.disablePictureInPicture",
+			    "HTMLVideoElement.onenterpictureinpicture",
+			    "HTMLVideoElement.onleavepictureinpicture",
+                            "Document.pictureInPictureEnabled",
+                            "DocumentOrShadowRoot.pictureInPictureElement",
+                            "PictureInPictureWindow.onresize" ],
+            "events":     [ "HTMLVideoElement: enterpictureinpicture",
+                            "HTMLVideoElement: leavepictureinpicture",
+                            "PictureInPictureWindow: resize" ]
         },
         "Pointer Events": {
             "overview":   [ "Pointer events" ],
@@ -952,13 +1074,12 @@
                             "ServiceWorkerGlobalScope: pushsubscriptionchange" ]
         },
         "Resize Observer API": {
-            "interfaces": [ "ResizeObservation",
-                            "ResizeObserver",
+            "overview":   [ "Resize Observer API" ],
+            "interfaces": [ "ResizeObserver",
                             "ResizeObserverEntry" ],
             "methods":    [],
             "properties": [],
-            "events":     [],
-            "callbacks":  [ "ResizeObserverCallback" ]
+            "events":     []
         },
         "Resource Timing API": {
             "overview":   [ "Resource Timing API" ],
@@ -971,6 +1092,7 @@
             "events":     []
         },
         "Screen Capture API": {
+            "overview":   [ "Screen Capture API" ],
             "guides":     [ "/docs/Web/API/Screen_Capture_API/Using_Screen_Capture" ],
             "interfaces": [],
             "dictionaries": [],
@@ -993,6 +1115,14 @@
             "interfaces": [ "ScreenOrientation" ],
             "methods":    [],
             "properties": [ "Screen.orientation"],
+            "events":     []
+        },
+        "Screen Wake Lock API": {
+            "overview":   [ "Screen Wake Lock API" ],
+            "interfaces": [ "WakeLock",
+                            "WakeLockSentinel" ],
+            "methods":    [],
+            "properties": [ "Navigator.wakelock" ],
             "events":     []
         },
         "Selection API": {
@@ -1249,6 +1379,7 @@
                             "Element: touchcancel" ]
         },
         "URL API": {
+            "overview":   [ "URL API" ],
             "interfaces": [ "URL",
                             "URLSearchParams",
                             "HTMLHyperlinkElementUtils",
@@ -1272,6 +1403,14 @@
             "methods":    [ "Navigator.vibrate()" ],
             "properties": [],
             "events":     []
+        },
+        "Visual Viewport": {
+            "overview":   [ "Visual Viewport API"],
+            "interfaces": [ "VisualViewport" ],
+            "methods":    [],
+            "properties": [ "Window.visualViewport" ],
+            "events":     [ "VisualViewport: resize",
+                            "VisualViewport: scroll" ]
         },
         "Web Animations": {
             "overview":   [ "Web Animations API" ],
@@ -1383,8 +1522,6 @@
             "overview":     [ "Web Crypto API" ],
             "interfaces":   [ "Crypto",
                               "CryptoKey",
-                              "CryptoKeyPair",
-                              "RandomSource",
                               "SubtleCrypto" ],
             "methods":      [],
             "properties":   [ "Window.crypto" ],
@@ -1393,6 +1530,8 @@
                               "AesCtrParams",
                               "AesGcmParams",
                               "AesKeyGenParams",
+                              "Algorithm",
+                              "CryptoKeyPair",
                               "EcKeyGenParams",
                               "EcKeyImportParams",
                               "EcdhKeyDeriveParams",
@@ -1400,6 +1539,8 @@
                               "HkdfParams",
                               "HmacImportParams",
                               "HmacKeyGenParams",
+                              "JsonWebKey",
+                              "KeyAlgorithm",
                               "Pbkdf2Params",
                               "RsaHashedImportParams",
                               "RsaHashedKeyGenParams",
@@ -1521,7 +1662,6 @@
                             "RTCDTMFSender",
                             "RTCDTMFToneChangeEvent",
                             "RTCStatsReport",
-                            "RTCStatsEvent",
                             "RTCErrorEvent" ],
             "dictionaries": [ "RTCConfiguration",
                             "RTCOAuthCredential",
@@ -1614,9 +1754,32 @@
                             "RTCQualityLimitationReason",
                             "RTCNetworkType",
                             "RTCStatsIceCandidatePairState" ],
-            "methods":    [ "MediaDevices.getUserMedia()"],
+            "methods":    [ "MediaDevices.getUserMedia()" ],
             "properties": [ "Navigator.mediaDevices" ],
-            "events":     [],
+            "events":     [ "RTCDataChannel: bufferedamountlow",
+                            "RTCDataChannel: close",
+                            "RTCDataChannel: closing",
+                            "RTCPeerConnection: connectionstatechange",
+                            "RTCPeerConnection: datachannel",
+                            "RTCDataChannel: error",
+                            "RTCIceTransport: error",
+                            "RTCDtlsTransport: error",
+                            "RTCSctpTransport: error",
+                            "RTCIceTransport: gatheringstatechange",
+                            "RTCPeerConnection: icecandidate",
+                            "RTCPeerConnection: icecandidateerror",
+                            "RTCPeerConnection: iceconnectionstatechange",
+                            "RTCPeerConnection: icegatheringstatechange",
+                            "RTCDataChannel: message",
+                            "RTCPeerConnection: negotiationneeded",
+                            "RTCDataChannel: open",
+                            "RTCIceTransport: selectedcandidatepairchange",
+                            "RTCPeerConnection: signalingstatechange",
+                            "RTCIceTransport: statechange",
+                            "RTCDtlsTransport: statechange",
+                            "RTCDTMFSender: tonechange",
+                            "RTCPeerConnection: track"
+                          ],
             "callbacks":  [ "RTCPeerConnectionErrorCallback",
                             "RTCSessionDescriptionCallback" ]
         },
@@ -1653,8 +1816,7 @@
         },
         "Web Storage API": {
             "overview":   [ "Web Storage API" ],
-            "guides":     [ "/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API",
-                            "/docs/Web/API/Web_Storage_API/Local_storage" ],
+            "guides":     [ "/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API"],
             "interfaces": [ "Storage",
                             "StorageEvent" ],
             "methods":    [],
@@ -1720,8 +1882,56 @@
             "properties": [],
             "events":     []
         },
+        "WebXR Device API": {
+            "overview":   [ "WebXR Device API" ],
+            "interfaces": [ "XR",
+                            "XRBoundedReferenceSpace",
+                            "XRFrame",
+                            "XRInputSource",
+                            "XRInputSourceArray",
+                            "XRInputSourceEvent",
+                            "XRInputSourcesChangeEvent",
+                            "XRPose",
+                            "XRReferenceSpace",
+                            "XRReferenceSpaceEvent",
+                            "XRRenderState",
+                            "XRRigidTransform",
+                            "XRSession",
+                            "XRSessionEvent",
+                            "XRSpace",
+                            "XRView",
+                            "XRViewerPose",
+                            "XRViewport",
+                            "XRWebGLLayer" ],
+            "methods":    [ "WebGLRenderingContext.makeXRCompatible()" ],
+            "properties": [ "Navigator.xr" ],
+            "events":     [ "XR: devicechange",
+                            "XRSession: end",
+                            "XRSession: inputsourceschange",
+                            "XRReferenceSpace: reset",
+                            "XRSession: select",
+                            "XRSession: selectend",
+                            "XRSession: selectstart",
+                            "XRSession: visibilitychange" ],
+            "dictionaries": [ "XRInputSourcesChangeEventInit",
+                            "XRInputSourceEventInit",
+                            "XRReferencespaceEventInit",
+                            "XRRenderStateInit",
+                            "XRSessionEventInit",
+                            "XRSessionInit",
+                            "XRWebGLLayerInit" ],
+            "types":      [ "XREnvironmentBlendMode",
+                            "XREye",
+                            "XRHandedness",
+                            "XRReferenceSpaceType",
+                            "XRSessionMode",
+                            "XRTargetRayMode",
+                            "XRVisibilityState",
+                            "XRWebGLRenderingContext" ],
+            "callbacks":  [ "XRFrameRequestCallback" ]
+        },
         "XDomain": {
-            "interfaces": [ "XDomainrequest" ],
+            "interfaces": [ "XDomainRequest" ],
             "methods":    [],
             "properties": [],
             "events":     []

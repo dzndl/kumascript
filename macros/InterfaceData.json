@@ -4,6 +4,10 @@
       "inh": "OrientationSensor",
       "impl": []
     },
+    "AbstractRange": {
+      "inh": "",
+      "impl": []
+    },
     "Accelerometer": {
       "inh": "Sensor",
       "impl": []
@@ -41,7 +45,7 @@
       "impl": []
     },
     "AudioContext": {
-      "inh": "EventTarget",
+      "inh": "BaseAudioContext",
       "impl": []
     },
     "AudioDestinationNode": {
@@ -187,9 +191,7 @@
     },
     "CSSPseudoElement": {
       "inh": "EventTarget",
-      "impl": [
-        "Animatable"
-      ]
+      "impl": []
     },
     "CSSStyleDeclaration": {
       "inh": "",
@@ -1298,7 +1300,7 @@
       "impl": []
     },
     "OfflineAudioContext": {
-      "inh": "AudioContext",
+      "inh": "BaseAudioContext",
       "impl": []
     },
     "OfflineResourceList": {
@@ -1488,7 +1490,7 @@
       "impl": []
     },
     "Range": {
-      "inh": "",
+      "inh": "AbstractRange",
       "impl": []
     },
     "RecordErrorEvent": {
@@ -1517,6 +1519,10 @@
     },
     "Sensor": {
       "inh": "EventTarget",
+      "impl": []
+    },
+    "StaticRange": {
+      "inh": "AbstractRange",
       "impl": []
     },
     "SVGAElement": {
@@ -2426,6 +2432,82 @@
       "impl": []
     },
     "XPathEvaluator": {
+      "inh": "",
+      "impl": []
+    },
+    "XR": {
+      "inh": "EventTarget",
+      "impl": []
+    },
+    "XRBoundedReferenceSpace": {
+      "inh": "XRReferenceSpace",
+      "impl": []
+    },
+    "XRFrame": {
+      "inh": "",
+      "impl": []
+    },
+    "XRInputSource": {
+      "inh": "",
+      "impl": []
+    },
+    "XRInputSourceArray": {
+      "inh": "",
+      "impl": []
+    },
+    "XRInputSourceEvent": {
+      "inh": "Event",
+      "impl": []
+    },
+    "XRInputSourcesChangeEvent": {
+      "inh": "Event",
+      "impl": []
+    },
+    "XRPose": {
+      "inh": "",
+      "impl": []
+    },
+    "XRReferenceSpace": {
+      "inh": "XRSpace",
+      "impl": []
+    },
+    "XRReferenceSpaceEvent": {
+      "inh": "Event",
+      "impl": []
+    },
+    "XRRenderState": {
+      "inh": "",
+      "impl": []
+    },
+    "XRRigidTransform": {
+      "inh": "",
+      "impl": []
+    },
+    "XRSession": {
+      "inh": "EventTarget",
+      "impl": []
+    },
+    "XRSessionEvent": {
+      "inh": "Event",
+      "impl": []
+    },
+    "XRSpace": {
+      "inh": "EventTarget",
+      "impl": []
+    },
+    "XRView": {
+      "inh": "",
+      "impl": []
+    },
+    "XRViewerPose": {
+      "inh": "XRPose",
+      "impl": []
+    },
+    "XRViewport": {
+      "inh": "",
+      "impl": []
+    },
+    "XRWebGLLayer": {
       "inh": "",
       "impl": []
     },
